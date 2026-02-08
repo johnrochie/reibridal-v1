@@ -16,9 +16,9 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Rei Bridal | Luxury Bridal Boutique",
-  description: "Where dreams meet elegance. Your personal bridal boutique for the perfect wedding day.",
-  keywords: ["bridal shop", "wedding dresses", "bride", "luxury bridal", "gowns"],
+  title: "Rei Bridal | Modern Bridal Boutique",
+  description: "Your wedding, your way. Discover perfect wedding dresses from our curated collection of modern bridal designers.",
+  keywords: ["bridal boutique", "wedding dresses", "bridal shop", "wedding gowns", "bride", "ireland", "dublin"],
 };
 
 export default function RootLayout({
