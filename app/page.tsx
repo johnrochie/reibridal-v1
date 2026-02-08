@@ -1,9 +1,10 @@
-import { Mail, Phone, MapPin, Sparkles, Star, Heart, HeartHandshake } from 'lucide-react';
+import { Mail, Phone, MapPin, Sparkles, Star, Heart, HeartHandshake, Image as ImageIcon } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="min-h-screen font-sans bg-white">
-      {/* Navigation - Minimal clean white */}
+      {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -19,8 +20,8 @@ export default function Home() {
             <a href="#styles" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-sm tracking-wide uppercase">
               Styles
             </a>
-            <a href="#designers" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-sm tracking-wide uppercase">
-              Designers
+            <a href="#collection" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-sm tracking-wide uppercase">
+              Collection
             </a>
             <a href="#contact" className="text-[#c4a96b] font-light text-sm tracking-wide uppercase">
               Book Appointment
@@ -29,43 +30,53 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero - Clean minimalist with warm overlay */}
-      <section className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-[#faf8f5] to-[#f5f0e8]">
-        <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-[#c4a96b]/10 to-[#c4a96b]/5"></div>
-        <div className="absolute bottom-20 left-20 w-48 h-48 rounded-full bg-gradient-to-br from-[#c4a96b]/5 to-[#c4a96b]/10"></div>
+      {/* Hero - with background image */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Hero Photo */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1593245318987-66b286c24ed3?auto=format&fit=crop&w=2000&q=80"
+            alt="Bride"
+            className="w-full h-full object-cover"
+          />
+          {/* Light tint overlay */}
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+          {/* Subtle gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/60"></div>
+        </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <div className="mb-8">
-            <Star className="w-10 h-10 text-[#c4a96b] mx-auto" />
+            <Star className="w-10 h-10 text-[#c4a96b] mx-auto drop-shadow-lg" />
           </div>
-          <h1 className="text-6xl md:text-8xl font-light mb-6 leading-tight text-gray-900">
+          <h1 className="text-6xl md:text-8xl font-light mb-6 leading-tight text-gray-900 drop-shadow-lg">
             Your Wedding,
             <br />
             <span className="font-serif italic text-5xl md:text-7xl mt-2" style={{ color: '#c4a96b' }}>
               Your Way
             </span>
           </h1>
-          <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-600 font-light leading-relaxed">
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-700 font-light leading-relaxed drop-shadow">
             Discover the perfect wedding dress from our thoughtfully curated collection of modern bridal designers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#contact"
-              className="bg-[#c4a96b] text-white px-10 py-4 font-light tracking-widest uppercase hover:bg-[#b8975e] transition-all duration-300"
+              className="bg-[#c4a96b] text-white px-10 py-4 font-light tracking-widest uppercase hover:bg-[#b8975e] transition-all duration-300 shadow-lg"
             >
               Book Appointment
             </a>
             <a
-              href="#styles"
-              className="border border-gray-300 text-gray-700 px-10 py-4 font-light tracking-widest uppercase hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+              href="#collection"
+              className="bg-white text-gray-700 px-10 py-4 font-light tracking-widest uppercase hover:bg-gray-50 transition-all duration-300 border border-gray-200"
             >
-              Explore Styles
+              Browse Collection
             </a>
           </div>
         </div>
       </section>
 
-      {/* About - Clean, modern */}
+      {/* About */}
       <section id="about" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -77,7 +88,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-lg leading-relaxed mb-6 text-gray-600 font-light">
-                Located in the heart of Ireland, Rei Bridal offers a relaxed, modern bridal experience for couples seeking contemporary wedding dresses and personalized styling.
+                Located in Ireland, Rei Bridal offers a relaxed, modern bridal experience for couples seeking contemporary wedding dresses and personalized styling.
               </p>
               <p className="text-lg leading-relaxed mb-6 text-gray-600 font-light">
                 Our curated collection features designs from world-renowned bridal houses, all selected for their quality, craftsmanship, and unique aesthetic.
@@ -87,33 +98,19 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-8 bg-gradient-to-br from-[#faf8f5] to-white border border-gray-100 rounded-lg">
-                <Heart className="w-10 h-10 text-[#c4a96b] mb-4" />
-                <h3 className="text-2xl font-light text-[#c4a96b] mb-2">300+</h3>
-                <p className="text-sm text-gray-600">Wedding Dresses</p>
-              </div>
-              <div className="p-8 bg-gradient-to-br from-[#faf8f5] to-white border border-gray-100 rounded-lg">
-                <Star className="w-10 h-10 text-[#c4a96b] mb-4" />
-                <h3 className="text-2xl font-light text-[#c4a96b] mb-2">50+</h3>
-                <p className="text-sm text-gray-600">Designers</p>
-              </div>
-              <div className="p-8 bg-gradient-to-br from-[#faf8f5] to-white border border-gray-100 rounded-lg mt-6">
-                <Sparkles className="w-10 h-10 text-[#c4a96b] mb-4" />
-                <h3 className="text-2xl font-light text-[#c4a96b] mb-2">100%</h3>
-                <p className="text-sm text-gray-600">Personalized</p>
-              </div>
-              <div className="p-8 bg-gradient-to-br from-[#faf8f5] to-white border border-gray-100 rounded-lg mt-6">
-                <HeartHandshake className="w-10 h-10 text-[#c4a96b] mb-4" />
-                <h3 className="text-2xl font-light text-[#c4a96b] mb-2">24hr</h3>
-                <p className="text-sm text-gray-600">Response</p>
-              </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+                alt="Bridal boutique"
+                className="w-full h-auto object-cover rounded-lg shadow-xl"
+              />
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-[#c4a96b]/20 rounded-lg -z-10"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Styles - Clean grid */}
+      {/* Styles - with images */}
       <section id="styles" className="py-24 bg-[#faf8f5]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -123,49 +120,118 @@ export default function Home() {
                 Styles
               </span>
             </h2>
-            <p className="text-lg text-gray-600 font-light">Find your aesthetic</p>
+            <p className="text-lg text-gray-600 font-light">Find your perfect aesthetic</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Classic', desc: 'Timeless elegance', icon: <Star className="w-8 h-8 text-[#c4a96b]" /> },
-              { title: 'Romantic', desc: 'Soft and dreamy', icon: <Heart className="w-8 h-8 text-[#c4a96b]" /> },
-              { title: 'Modern', desc: 'Contemporary chic', icon: <Sparkles className="w-8 h-8 text-[#c4a96b]" /> },
-              { title: 'Bohemian', desc: 'Free spirited', icon: <Sparkles className="w-8 h-8 text-[#c4a96b]" /> },
-              { title: 'Short', desc: 'Playful fun', icon: <Star className="w-8 h-8 text-[#c4a96b]" /> },
-              { title: 'Plus Size', desc: 'Inclusive style', icon: <Heart className="w-8 h-8 text-[#c4a96b]" /> }
+              {
+                photo: "https://images.unsplash.com/photo-1505922593614-fc8d3110dd31?auto=format&fit=crop&w=600&q=80",
+                title: 'Classic',
+                desc: 'Timeless elegance',
+                icon: <Star className="w-8 h-8 text-[#c4a96b]" />
+              },
+              {
+                photo: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80",
+                title: 'Romantic',
+                desc: 'Soft and dreamy',
+                icon: <Heart className="w-8 h-8 text-[#c4a96b]" />
+              },
+              {
+                photo: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
+                title: 'Bohemian',
+                desc: 'Free spirited',
+                icon: <Sparkles className="w-8 h-8 text-[#c4a96b]" />
+              },
+              {
+                photo: "https://images.unsplash.com/photo-1520854221256-17451cc330e7?auto=format&fit=crop&w=600&q=80",
+                title: 'Minimalist',
+                desc: 'Clean modern vibe',
+                icon: <Star className="w-8 h-8 text-[#c4a96b]" />
+              },
+              {
+                photo: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&q=80",
+                title: 'Modern',
+                desc: 'Contemporary chic',
+                icon: <Sparkles className="w-8 h-8 text-[#c4a96b]" />
+              },
+              {
+                photo: "https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&w=600&q=80",
+                title: 'Glamour',
+                desc: 'Make a statement',
+                icon: <Heart className="w-8 h-8 text-[#c4a96b]" />
+              }
             ].map((style, i) => (
-              <div key={i} className="group bg-white p-10 border border-gray-100 hover:border-[#c4a96b]/30 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  {style.icon}
-                  <h3 className="text-2xl font-light text-gray-900 group-hover:text-[#c4a96b] transition-colors">
-                    {style.title}
-                  </h3>
+              <div key={i} className="group bg-white overflow-hidden border border-gray-100 hover:border-[#c4a96b]/30 hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={style.photo}
+                    alt={style.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </div>
-                <p className="text-gray-600 font-light">{style.desc}</p>
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    {style.icon}
+                    <h3 className="text-2xl font-light text-gray-900">{style.title}</h3>
+                  </div>
+                  <p className="text-gray-600 font-light">{style.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Designers */}
-      <section id="designers" className="py-24 bg-white">
+      {/* Collection Showcase */}
+      <section id="collection" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-wide text-gray-900">
               Featured
-              <span className="block font-serif italic text-3xl md:text-4xl mt-2" style={{ color: '# #c4a96b' }}>
+              <span className="block font-serif italic text-3xl md:text-4xl mt-2" style={{ color: '#c4a96b' }}>
                 Designers
               </span>
             </h2>
             <p className="text-lg text-gray-600 font-light">Curated bridal collections</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Designer collage */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="relative group overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                alt="Designer showcase"
+                className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="text-2xl font-light">Modern Collection</h3>
+                  <p className="text-sm font-light mt-1">Contemporary designers</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80"
+                alt="Designer showcase"
+                className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="text-2xl font-light">Romantic Collection</h3>
+                  <p className="text-sm font-light mt-1">Dreamy silhouettes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Designer list */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
             {['Alexandra Grecco', 'Loeffler Randall', 'Love Story London', 'A La Robe', 'Bon Bride', 'Katherine Tash', 'Ingrid Olic', 'Mikado'].map((designer, i) => (
-              <div key={i} className="group p-6 border border-gray-100 hover:border-[#c4a96b]/40 hover:bg-[#faf8f5]/50 transition-all duration-300 text-center">
-                <h3 className="text-lg font-light text-gray-700 group-hover:text-[#c4a96b] transition-colors tracking-wide">
+              <div key={i} className="group p-4 text-center border border-gray-100 hover:border-[#c4a96b]/30 hover:bg-[#faf8f5]/50 transition-all duration-300">
+                <h3 className="text-base font-light text-gray-700 group-hover:text-[#c4a96b] transition-colors tracking-wide">
                   {designer}
                 </h3>
               </div>
@@ -174,7 +240,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact - Clean modern */}
+      {/* Contact */}
       <section id="contact" className="py-24 bg-gradient-to-br from-[#faf8f5] to-[#f5f0e8]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -237,7 +303,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Location Info */}
+      {/* Location */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12">
@@ -266,7 +332,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer - Clean minimal */}
+      {/* Footer */}
       <footer className="py-12 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
