@@ -79,10 +79,10 @@ export default function Hero() {
             <span className="absolute inset-0 bg-gradient-to-r from-[#b8975e] to-[#c4a96b] opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
           </a>
           <a
-            href="#collection"
+            href="#designers"
             className="group inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-sm text-gray-700 px-8 py-4 font-light tracking-[0.2em] uppercase text-sm border border-gray-200 transition-all duration-300 hover:border-[#c4a96b]/50 hover:text-[#c4a96b] hover:shadow-lg"
           >
-            <span>Browse Collection</span>
+            <span>Browse Designers</span>
             <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
