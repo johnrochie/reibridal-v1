@@ -1,11 +1,11 @@
-import { Mail, Phone, MapPin, Sparkles, Star, Heart, HeartHandshake, Image as ImageIcon } from 'lucide-react';
-import Image from 'next/image';
+import { Mail, Phone, MapPin, Sparkles, Star, Heart } from 'lucide-react';
+import Hero from './components/Hero';
 
 export default function Home() {
   return (
     <div className="min-h-screen font-sans bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100/80 transition-all duration-300 hover:bg-white/95">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img src="/logo.jpg" alt="Rei Bridal" className="h-12 w-12 object-contain" />
@@ -30,51 +30,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero - with background image */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Hero Photo */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1593245318987-66b286c24ed3?auto=format&fit=crop&w=2000&q=80"
-            alt="Bride"
-            className="w-full h-full object-cover"
-          />
-          {/* Light tint overlay */}
-          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-          {/* Subtle gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/60"></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div className="mb-8">
-            <Star className="w-10 h-10 text-[#c4a96b] mx-auto drop-shadow-lg" />
-          </div>
-          <h1 className="text-6xl md:text-8xl font-light mb-6 leading-tight text-gray-900 drop-shadow-lg">
-            Your Wedding,
-            <br />
-            <span className="font-serif italic text-5xl md:text-7xl mt-2" style={{ color: '#c4a96b' }}>
-              Your Way
-            </span>
-          </h1>
-          <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-700 font-light leading-relaxed drop-shadow">
-            Discover the perfect wedding dress from our thoughtfully curated collection of modern bridal designers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact"
-              className="bg-[#c4a96b] text-white px-10 py-4 font-light tracking-widest uppercase hover:bg-[#b8975e] transition-all duration-300 shadow-lg"
-            >
-              Book Appointment
-            </a>
-            <a
-              href="#collection"
-              className="bg-white text-gray-700 px-10 py-4 font-light tracking-widest uppercase hover:bg-gray-50 transition-all duration-300 border border-gray-200"
-            >
-              Browse Collection
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* About */}
       <section id="about" className="py-24 bg-white">
