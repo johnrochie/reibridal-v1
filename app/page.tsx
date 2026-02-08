@@ -1,26 +1,27 @@
-import { Mail, Phone, MapPin, Sparkles, Heart, Star, Crown, Waves } from 'lucide-react';
+import { Mail, Phone, MapPin, Sparkles, Star, Crown } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans">
-      {/* Creative Navigation - Floating */}
-      <nav className="fixed top-0 left-0 right-0 z-50 py-6">
+    <div className="min-h-screen font-sans bg-[#0a0a0a]">
+      {/* Navigation - Minimal transparent over hero */}
+      <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-gradient-to-b from-[#0a0a0a]/80 to-transparent">
         <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
-          <div className="flex items-center gap-4 bg-[#0a1628]/95 backdrop-blur-sm px-6 py-3 rounded-full border border-[#d4af37]/20">
+          <div className="flex items-center gap-4">
             <img src="/logo.jpg" alt="Rei Bridal" className="h-10 w-10 object-contain" />
-            <div className="text-lg font-light tracking-wider text-[#f5f5f5]">
-              <span style={{ color: '#d4af37' }}>REI</span> BRIDAL
+            <div className="text-xl font-light tracking-wider text-white">
+              <span className="text-[#d4af37]">REI</span> BRIDAL
             </div>
           </div>
-          <div className="hidden md:flex space-x-8 bg-[#0a1628]/95 backdrop-blur-sm px-6 py-3 rounded-full border border-[#d4af37]/20">
-            <a href="#about" className="text-[#f5f5f5]/80 hover:text-[#d4af37] transition-colors font-light tracking-wide">
+          <div className="hidden md:flex space-x-10">
+            <a href="#about" className="text-white/80 hover:text-white transition-colors font-light tracking-wide">
               About
             </a>
-            <a href="#collections" className="text-[#f5f5f5]/80 hover:text-[#d4af37] transition-colors font-light tracking-wide">
+            <a href="#collections" className="text-white/80 hover:text-white transition-colors font-light tracking-wide">
               Collections
             </a>
-            <a href="#services" className="text-[#f5f5f5]/80 hover:text-[#d4af37] transition-colors font-light tracking-wide">
-              Services
+            <a href="#gallery" className="text-white/80 hover:text-white transition-colors font-light tracking-wide">
+              Gallery
             </a>
             <a href="#contact" className="text-[#d4af37] tracking-wide font-light">
               Contact
@@ -29,367 +30,357 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Creative Hero - Split Layout */}
-      <section className="min-h-screen flex items-center relative overflow-hidden" style={{ background: '#0a1628' }}>
-        {/* Background decoration circles */}
-        <div className="absolute top-20 right-20 w-96 h-96 rounded-full opacity-10" style={{ background: '#d4af37' }}></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 rounded-full opacity-5" style={{ background: '#d4af37' }}></div>
-        <div className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full opacity-5"></div>
+      {/* Hero - Full-screen photo */}
+      <section className="relative min-h-screen flex items-center">
+        {/* Hero Image - Grayscale */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80"
+            alt="Bride in wedding dress"
+            className="w-full h-full object-cover"
+            style={{ filter: 'grayscale(100%)' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
+        </div>
 
-        <div className="max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-16 items-center pt-24">
-          {/* Left side - Text */}
-          <div className="relative z-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 pt-32">
+          <div className="max-w-3xl">
             <div className="mb-8">
-              <Crown className="w-16 h-16 text-[#d4af37] mb-6" />
+              <Crown className="w-12 h-12 text-[#d4af37]" />
             </div>
-            <h1 className="text-7xl md:text-9xl font-light mb-8 leading-tight text-[#f5f5f5]">
+            <h1 className="text-6xl md:text-8xl font-light mb-8 leading-tight text-white">
               Where
               <br />
-              Dreams
-              <span className="block font-serif italic font-normal text-6xl md:text-8xl mt-4" style={{ color: '#d4af37' }}>
-                Become
+              <span className="font-serif italic font-normal text-5xl md:text-7xl" style={{ color: '#d4af37' }}>
+                Dreams
               </span>
-              Reality
+              <br />
+              Begin
             </h1>
-            <p className="text-xl leading-relaxed mb-12 max-w-xl" style={{ color: '#9caab8' }}>
+            <p className="text-xl leading-relaxed mb-12 text-white/90 font-light">
               Your personal bridal boutique crafting unforgettable wedding experiences.
+              From finding the perfect gown to creating your dream ceremony.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="bg-[#d4af37] text-[#0a1628] px-8 py-4 font-light tracking-widest uppercase hover:bg-[#c9a227] transition-all duration-300 flex items-center gap-2"
+                className="bg-[#d4af37] text-black px-8 py-4 font-light tracking-widest uppercase hover:bg-[#c9a227] transition-all duration-300"
               >
-                Start Your Journey
-                <Star className="w-4 h-4" />
+                Book Appointment
               </a>
               <a
                 href="#collections"
-                className="border border-[#d4af37]/30 text-[#f5f5f5] px-8 py-4 font-light tracking-widest uppercase hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300"
+                className="border border-white/30 text-white px-8 py-4 font-light tracking-widest uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300"
               >
                 Explore Collections
               </a>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Right side - Creative design elements */}
-          <div className="relative">
-            <div className="w-full aspect-square bg-gradient-to-br from-[#0f1f3a] to-[#0a1628] rounded-full flex items-center justify-center relative">
-              <img src="/logo.jpg" alt="Rei Bridal" className="w-48 h-48 object-contain absolute"/>
-              <Waves className="w-32 h-32 text-[#d4af37]/20 absolute top-10 left-10 rotate-45" />
-              <Heart className="w-24 h-24 text-[#d4af37]/15 absolute bottom-10 right-10" />
-              <Crown className="w-20 h-20 text-[#d4af37]/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      {/* About - Split photo + text */}
+      <section id="about" className="py-32 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Left - Photo */}
+            <div className="relative">
+              <div className="aspect-[3/4]">
+                <img
+                  src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&w=1200&q=80"
+                  alt="Bride portrait"
+                  className="w-full h-full object-cover"
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 border-2 border-[#d4af37]/30 hidden md:block"></div>
+            </div>
+
+            {/* Right - Text */}
+            <div>
+              <h2 className="text-5xl md:text-6xl font-light mb-8 tracking-widest text-white">
+                The <span className="font-serif italic font-normal" style={{ color: '#d4af37' }}>Story</span>
+              </h2>
+              <div className="space-y-6 mb-12">
+                <p className="text-lg leading-relaxed text-white/80 font-light">
+                  Welcome to Rei Bridal, where every detail of your wedding journey is crafted with love and precision.
+                </p>
+                <p className="text-lg leading-relaxed text-white/80 font-light">
+                  Dedicated to helping you find the perfect gown that reflects your unique style and makes you feel like royalty on your big day.
+                </p>
+                <p className="text-lg leading-relaxed text-white/80 font-light">
+                  From intimate ceremonies to grand celebrations, I make your wedding dreams come true.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-light text-[#d4af37] mb-2">
+                    <Crown className="w-8 h-8 mx-auto mb-2" />
+                    10+
+                  </div>
+                  <p className="text-sm text-white/60">Years Experience</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-light text-[d4af37] mb-2">
+                    <Star className="w-8 h-8 mx-auto mb-2" />
+                    500+
+                  </div>
+                  <p className="text-sm text-white/60">Happy Brides</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-light text-[d4af37] mb-2">
+                    <Sparkles className="w-8 h-8 mx-auto mb-2" />
+                    Infinite
+                  </div>
+                  <p className="text-sm text-white/60">Possibilities</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Creative About - Overlapping Cards */}
-      <section id="about" className="py-32 relative overflow-hidden" style={{ background: '#0f1f3a' }}>
-        <div className="absolute top-0 left-0 w-full h-full opacity-5">
-          <div className="absolute top-20 left-20 w-40 h-40 rounded-full bg-[#d4af37]"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full bg-[#d4af37]"></div>
-        </div>
-
+      {/* Collections - Photo cards */}
+      <section id="collections" className="py-32 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
-            <h2 className="text-6xl md:text-8xl font-light mb-8 tracking-widest text-[#f5f5f5]">
-              The <span className="font-serif italic font-normal" style={{ color: '#d4af37' }}>
-                Story
-              </span>
+            <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-widest text-white">
+              Bridal <span className="font-serif italic font-normal" style={{ color: '#d4af37' }}>Collections</span>
             </h2>
+            <p className="text-xl text-white/70 font-light">Timeless designs for every style</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="p-8 border relative overflow-hidden" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute top-0 right-0 w-20 h-20 bg-[#d4af37]/10 rounded-bl-full"></div>
-              <Star className="w-8 h-8 text-[#d4af37] mb-6" />
-              <p className="text-base leading-relaxed" style={{ color: '#9caab8' }}>
-                Welcome to Rei Bridal, where every detail of your wedding journey is crafted with love and precision.
-              </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Collection 1 */}
+            <div className="group relative overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1505922593614-fc8d3110dd31?auto=format&fit=crop&w=800&q=80"
+                  alt="Classic Elegance"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8">
+                <h3 className="text-2xl font-light mb-4 text-white group-hover:text-[#d4af37] transition-colors">
+                  Classic <span className="block font-serif italic font-normal text-xl">Elegance</span>
+                </h3>
+                <p className="text-sm text-white/70 mb-6 line-clamp-2">
+                  Traditional ballgowns and timeless silhouettes that never go out of style
+                </p>
+                <a href="#contact" className="inline-flex items-center gap-2 text-white text-sm font-light tracking-wide uppercase group-hover:text-[#d4af37] transition-colors">
+                  View Collection
+                  <Star className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
-            <div className="p-8 border relative overflow-hidden md:transform md:translate-y-12" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute bottom-0 left-0 w-20 h-20 bg-[#d4af37]/10 rounded-tr-full"></div>
-              <Crown className="w-8 h-8 text-[#d4af37] mb-6" />
-              <p className="text-base leading-relaxed" style={{ color: '#9caab8' }}>
-                Dedicated to helping you find the perfect gown that reflects your unique style.
-              </p>
+            {/* Collection 2 */}
+            <div className="group relative overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80"
+                  alt="Modern Romance"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8">
+                <h3 className="text-2xl font-light mb-4 text-white group-hover:text-[#d4af37] transition-colors">
+                  Modern <span className="block font-serif italic font-normal text-xl">Romance</span>
+                </h3>
+                <p className="text-sm text-white/70 mb-6 line-clamp-2">
+                  Contemporary designs with romantic touches for the modern bride
+                </p>
+                <a href="#contact" className="inline-flex items-center gap-2 text-white text-sm font-light tracking-wide uppercase group-hover:text-[#d4af37] transition-colors">
+                  View Collection
+                  <Star className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
-            <div className="p-8 border relative overflow-hidden" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#d4af37]/5 rounded-full"></div>
-              <Heart className="w-8 h-8 text-[#d4af37] mb-6" />
-              <p className="text-base leading-relaxed" style={{ color: '#9caab8' }}>
-                From intimate ceremonies to grand celebrations, I make your wedding dreams come true.
-              </p>
+            {/* Collection 3 */}
+            <div className="group relative overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
+                  alt="Bohemian Chic"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8">
+                <h3 className="text-2xl font-light mb-4 text-white group-hover:text-[#d4af37] transition-colors">
+                  Bohemian <span className="block font-serif italic font-normal text-xl">Chic</span>
+                </h3>
+                <p className="text-sm text-white/70 mb-6 line-clamp-2">
+                  Free-spirited designs for the unconventional bride who dances to their own rhythm
+                </p>
+                <a href="#contact" className="inline-flex items-center gap-2 text-white text-sm font-light tracking-wide uppercase group-hover:text-[#d4af37] transition-colors">
+                  View Collection
+                  <Star className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Creative Collections - Diagonal Layout */}
-      <section id="collections" className="py-32" style={{ background: '#0a1628' }}>
+      {/* Services - Photo cards */}
+      <section id="services" className="py-32 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
-            <h2 className="text-6xl md:text-8xl font-light mb-8 tracking-widest text-[#f5f5f5]">
-              Bespoke
-              <span className="block font-serif italic font-normal text-5xl md:text-7xl mt-4" style={{ color: '#d4af37' }}>
-                Collections
-              </span>
+            <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-widest text-white">
+              Bespoke <span className="font-serif italic font-normal" style={{ color: '#d4af37' }}>Services</span>
             </h2>
+            <p className="text-xl text-white/70 font-light">Everything you need for your perfect day</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16">
-            <div className="space-y-8">
-              <div className="group p-10 border hover:scale-105 transition-all duration-500 relative overflow-hidden" style={{ background: '#0f1f3a', borderColor: '#1e3a5f' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/0 to-[#d4af37]/5 group-hover:from-[#d4af37]/5"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-8 group-hover:border-[#d4af37]/50 transition-all" style={{ borderColor: '#d4af37' }}>
-                    <Heart className="w-8 h-8 text-[#d4af37]" />
-                  </div>
-                  <h3 className="text-3xl font-light mb-6 tracking-wider text-[#f5f5f5]">
-                    Classic
-                    <span className="block font-serif italic font-normal text-2xl mt-2" style={{ color: '#d4af37' }}>Elegance</span>
-                  </h3>
-                  <p className="leading-relaxed mb-8 text-[#9caab8]">
-                    Traditional ballgowns and timeless silhouettes that never go out of style
-                  </p>
-                  <a href="#contact" className="inline-flex items-center gap-2 font-light tracking-wide text-sm uppercase" style={{ color: '#d4af37' }}>
-                    View Collection
-                    <Star className="w-3 h-3" />
-                  </a>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[{
+              photo: "https://images.unsplash.com/photo-1520854221256-17451cc330e7?auto=format&fit=crop&w=600&q=80",
+              icon: <Star className="w-8 h-8" />,
+              title: "Gowns",
+              desc: "Find your perfect dress"
+            }, {
+              photo: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&q=80",
+              icon: <Crown className="w-8 h-8" />,
+              title: "Custom Design",
+              desc: "Unique bridal creations"
+            }, {
+              photo: "https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&w=600&q=80",
+              icon: <Sparkles className="w-8 h-8" />,
+              title: "Styling",
+              desc: "Complete wedding styling"
+            }, {
+              photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80",
+              icon: <Star className="w-8 h-8" />,
+              title: "Planning",
+              desc: "Full event coordination"
+            }].map((service, index) => (
+              <div key={index} className="group relative overflow-hidden">
+                <div className="aspect-square">
+                  <img
+                    src={service.photo}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    style={{ filter: 'grayscale(100%)' }}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="text-[#d4af37] mb-4">{service.icon}</div>
+                  <h3 className="text-lg font-light mb-2 tracking-widest uppercase text-white">{service.title}</h3>
+                  <p className="text-sm text-white/70 text-center">{service.desc}</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-4 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                  <h3 className="text-white font-light tracking-widest uppercase">{service.title}</h3>
                 </div>
               </div>
-            </div>
-
-            <div className="space-y-8 md:pt-16">
-              <div className="group p-10 border hover:scale-105 transition-all duration-500 relative overflow-hidden" style={{ background: '#0f1f3a', borderColor: '#1e3a5f' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/0 to-[#d4af37]/5 group-hover:from-[#d4af37]/5"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-8 group-hover:border-[#d4af37]/50 transition-all" style={{ borderColor: '#d4af37' }}>
-                    <Crown className="w-8 h-8 text-[#d4af37]" />
-                  </div>
-                  <h3 className="text-3xl font-light mb-6 tracking-wider text-[#f5f5f5]">
-                    Modern
-                    <span className="block font-serif italic font-normal text-2xl mt-2" style={{ color: '#d4af37' }}>Romance</span>
-                  </h3>
-                  <p className="leading-relaxed mb-8 text-[#9caab8]">
-                    Contemporary designs with romantic touches for the modern bride
-                  </p>
-                  <a href="#contact" className="inline-flex items-center gap-2 font-light tracking-wide text-sm uppercase" style={{ color: '#d4af37' }}>
-                    View Collection
-                    <Star className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-
-              <div className="group p-10 border hover:scale-105 transition-all duration-500 relative overflow-hidden" style={{ background: '#0f1f3a', borderColor: '#1e3a5f' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/0 to-[#d4af37]/5 group-hover:from-[#d4af37]/5"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-8 group-hover:border-[#d4af37]/50 transition-all" style={{ borderColor: '#d4af37' }}>
-                    <Sparkles className="w-8 h-8 text-[#d4af37]" />
-                  </div>
-                  <h3 className="text-3xl font-light mb-6 tracking-wider text-[#f5f5f5]">
-                    Bohemian
-                    <span className="block font-serif italic font-normal text-2xl mt-2" style={{ color: '#d4af37' }}>Chic</span>
-                  </h3>
-                  <p className="leading-relaxed mb-8 text-[#9caab8]">
-                    Free-spirited designs for the unconventional bride who dances to their own rhythm
-                  </p>
-                  <a href="#contact" className="inline-flex items-center gap-2 font-light tracking-wide text-sm uppercase" style={{ color: '#d4af37' }}>
-                    View Collection
-                    <Star className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Creative Services - Grid with overlays */}
-      <section id="services" className="py-32" style={{ background: '#0f1f3a' }}>
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-6xl md:text-8xl font-light mb-8 tracking-widest text-[#f5f5f5]">
-              Complete
-              <span className="block font-serif italic font-normal text-5xl md:text-7xl mt-4" style={{ color: '#d4af37' }}>
-                Services
-              </span>
+      {/* Contact - Minimal */}
+      <section id="contact" className="py-32 bg-[#0d0d0d]">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-widest text-white">
+              Get In <span className="font-serif italic font-normal" style={{ color: '#d4af37' }}>Touch</span>
             </h2>
+            <p className="text-xl text-white/70 font-light">Schedule your consultation</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="group relative p-8 border hover:-translate-y-2 transition-all duration-500" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute inset-0 bg-[#d4af37]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-6 group-hover:border-[#d4af37]/40 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <Heart className="w-8 h-8 text-[#d4af37]" />
-                </div>
-                <h3 className="text-lg font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Gowns</h3>
-                <p className="text-sm text-[#9caab8]">Find your perfect dress</p>
-              </div>
-            </div>
-
-            <div className="group relative p-8 border hover:-translate-y-2 transition-all duration-500" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute inset-0 bg-[#d4af37]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-6 group-hover:border-[#d4af37]/40 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <Star className="w-8 h-8 text-[#d4af37]" />
-                </div>
-                <h3 className="text-lg font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Alterations</h3>
-                <p className="text-sm text-[#9caab8]">Perfect fit guaranteed</p>
-              </div>
-            </div>
-
-            <div className="group relative p-8 border hover:-translate-y-2 transition-all duration-500" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute inset-0 bg-[#d4af37]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-6 group-hover:border-[#d4af37]/40 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <Sparkles className="w-8 h-8 text-[#d4af37]" />
-                </div>
-                <h3 className="text-lg font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Styling</h3>
-                <p className="text-sm text-[#9caab8]">Complete wedding styling</p>
-              </div>
-            </div>
-
-            <div className="group relative p-8 border hover:-translate-y-2 transition-all duration-500" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute inset-0 bg-[#d4af37]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center mb-6 group-hover:border-[#d4af37]/40 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <Crown className="w-8 h-8 text-[#d4af37]" />
-                </div>
-                <h3 className="text-lg font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Planning</h3>
-                <p className="text-sm text-[#9caab8]">Full event coordination</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Creative Contact - Floating layout */}
-      <section id="contact" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #0f1f3a 100%)' }}>
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
-          <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#d4af37]"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-6xl md:text-8xl font-light mb-8 tracking-widest text-[#f5f5f5]">
-              Let's
-              <span className="block font-serif italic font-normal text-5xl md:text-7xl mt-4" style={{ color: '#d4af37' }}>
-                Begin
-              </span>
-            </h2>
-            <p className="text-xl text-[#9caab8]">Schedule your complimentary consultation</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-10">
-              <div className="flex items-start gap-6 group">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#d4af37]/10 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <Mail className="w-6 h-6 text-[#d4af37]" />
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-light mb-2 tracking-widest uppercase text-[#f5f5f5]">Email</h4>
-                  <p className="text-[#9caab8] font-light">hello@reibridal.com</p>
-                  <p className="text-sm text-[#6b7c8f] mt-1">We respond within 24 hours</p>
+                  <h4 className="text-sm font-light mb-2 tracking-widest uppercase text-white">Email</h4>
+                  <p className="text-white/80 font-light">hello@reibridal.com</p>
+                  <p className="text-sm text-white/50 mt-1">We respond within 24 hours</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-6 group">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#d4af37]/10 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <Phone className="w-6 h-6 text-[#d4af37]" />
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-light mb-2 tracking-widest uppercase text-[#f5f5f5]">Phone</h4>
-                  <p className="text-[#9caab8] font-light">+353 (0) XX XXX XXXX</p>
-                  <p className="text-sm text-[#6b7c8f] mt-1">Mon-Sat, 10am-7pm</p>
+                  <h4 className="text-sm font-light mb-2 tracking-widest uppercase text-white">Phone</h4>
+                  <p className="text-white/80 font-light">+353 (0) XX XXX XXXX</p>
+                  <p className="text-sm text-white/50 mt-1">Mon-Sat, 10am-7pm</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-6 group">
-                <div className="w-16 h-16 border-2 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#d4af37]/10 transition-all" style={{ borderColor: '#d4af37' }}>
-                  <MapPin className="w-6 h-6 text-[#d4af37]" />
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-light mb-2 tracking-widest uppercase text-[#f5f5f5]">Location</h4>
-                  <p className="text-[#9caab8] font-light">12 Smith Street</p>
-                  <p className="text-sm text-[#6b7c8f] mt-1">By appointment only</p>
+                  <h4 className="text-sm font-light mb-2 tracking-widest uppercase text-white">Location</h4>
+                  <p className="text-white/80 font-light">12 Smith Street</p>
+                  <p className="text-sm text-white/50 mt-1">By appointment only</p>
                 </div>
               </div>
             </div>
 
-            <div className="p-10 border relative overflow-hidden" style={{ background: '#0a1628', borderColor: '#1e3a5f' }}>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/5 rounded-bl-full"></div>
-              <div className="relative z-10">
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Your Name</label>
-                    <input
-                      type="text"
-                      className="w-full px-5 py-4 bg-[#0f1f3a] border text-[#f5f5f5]/90 focus:ring-1 focus:border-[#d4af37]/30 outline-none transition-all font-light"
-                      style={{ borderColor: '#1e3a5f' }}
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Email</label>
-                    <input
-                      type="email"
-                      className="w-full px-5 py-4 bg-[#0f1f3a] border text-[#f5f5f5]/90 focus:ring-1 focus:border-[#d4af37]/30 outline-none transition-all font-light"
-                      style={{ borderColor: '#1e3a5f' }}
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-light mb-3 tracking-widest uppercase text-[#f5f5f5]">Message</label>
-                    <textarea
-                      rows={4}
-                      className="w-full px-5 py-4 bg-[#0f1f3a] border text-[#f5f5f5]/90 focus:ring-1 focus:border-[#d4af37]/30 outline-none transition-all resize-none font-light"
-                      style={{ borderColor: '#1e3a5f' }}
-                      placeholder="Tell me about your dream wedding..."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#d4af37] text-[#0a1628] py-5 font-light tracking-widest uppercase hover:bg-[#c9a227] transition-all duration-300"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
+            <div className="border border-white/10">
+              <form className="space-y-6 p-8">
+                <div>
+                  <label className="block text-sm font-light mb-3 tracking-widest uppercase text-white">Your Name</label>
+                  <input
+                    type="text"
+                    className="w-full px-5 py-4 bg-black/50 border border-white/20 text-white/90 focus:ring-1 focus:border-[#d4af37]/50 outline-none transition-all font-light"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-light mb-3 tracking-widest uppercase text-white">Email</label>
+                  <input
+                    type="email"
+                    className="w-full px-5 py-4 bg-black/50 border border-white/20 text-white/90 focus:ring-1 focus:border-[#d4af37]/50 outline-none transition-all font-light"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-light mb-3 tracking-widest uppercase text-white">Message</label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-5 py-4 bg-black/50 border border-white/20 text-white/90 focus:ring-1 focus:border-[#d4af37]/50 outline-none transition-all resize-none font-light"
+                    placeholder="Tell me about your dream wedding..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-[#d4af37] text-black py-4 font-light tracking-widest uppercase hover:bg-[#c9a227] transition-all duration-300"
+                >
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Creative Footer - Floating glass */}
-      <footer className="py-16 relative" style={{ background: '#0a1628' }}>
+      {/* Footer - Minimal */}
+      <footer className="py-12 border-t border-white/10 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-4 bg-[#0f1f3a]/50 px-6 py-4 rounded-3xl border border-[#d4af37]/20">
-              <img src="/logo.jpg" alt="Rei Bridal" className="h-12 w-12 object-contain" />
-              <div className="text-xl font-light tracking-wider text-[#f5f5f5]">
-                <span style={{ color: '#d4af37' }}>REI</span> BRIDAL
+            <div className="flex items-center gap-4">
+              <img src="/logo.jpg" alt="Rei Bridal" className="h-10 w-10 object-contain" />
+              <div className="text-lg font-light tracking-wider text-white">
+                <span className="text-[#d4af37]">REI</span> BRIDAL
               </div>
             </div>
-
             <div className="text-center md:text-left">
-              <p className="mb-2 font-light tracking-wide text-sm" style={{ color: '#6b7c8f' }}>
-                Luxury Bridal Boutique
-              </p>
-              <p className="text-sm font-light" style={{ color: '#4a5a6a' }}>
-                © 2026 Rei Bridal. All rights reserved.
-              </p>
+              <p className="text-sm text-white/60 font-light">© 2026 Rei Bridal. All rights reserved.</p>
             </div>
-
             <div className="flex items-center gap-4">
-              <a href="#contact" className="w-12 h-12 border-2 rounded-full flex items-center justify-center hover:bg-[#d4af37]/10 transition-all" style={{ borderColor: '#d4af37' }}>
-                <Mail className="w-5 h-5 text-[#d4af37]" />
-              </a>
-              <a href="#contact" className="w-12 h-12 border-2 rounded-full flex items-center justify-center hover:bg-[#d4af37]/10 transition-all" style={{ borderColor: '#d4af37' }}>
-                <Phone className="w-5 h-5 text-[#d4af37]" />
+              <a href="#contact" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">
+                <Mail className="w-4 h-4 text-white" />
               </a>
             </div>
           </div>
