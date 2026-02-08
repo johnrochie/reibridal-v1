@@ -7,8 +7,10 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 bg-[#0a0a0a]/95 backdrop-blur-sm shadow-sm z-50 border-b border-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold tracking-tight flex items-center gap-2">
-            <Heart className="w-7 h-7 text-[#d4af37]" />
-            <span className="text-[#f5f5f5]">
+            <Heart className="w-6 h-6 text-[#d4af37]" />
+            <Heart className="w-6 h-6 text-[#d4af37]" />
+            <Heart className="w-6 h-6 text-[#d4af37]" />
+            <span className="text-[#f5f5f5] ml-2">
               Rei <span className="text-[#d4af37]">Bridal</span>
             </span>
           </div>
@@ -354,8 +356,10 @@ export default function Home() {
       <footer className="bg-[#0a0a0a] border-t border-[#2a2a2a] py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Heart className="w-7 h-7 text-[#d4af37]" />
-            <span className="text-2xl font-bold tracking-tight text-[#f5f5f5]">
+            <Heart className="w-6 h-6 text-[#d4af37]" />
+            <Heart className="w-6 h-6 text-[#d4af37]" />
+            <Heart className="w-6 h-6 text-[#d4af37]" />
+            <span className="text-2xl font-bold tracking-tight text-[#f5f5f5] ml-2">
               Rei <span className="text-[#d4af37]">Bridal</span>
             </span>
           </div>
